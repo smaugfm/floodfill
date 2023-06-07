@@ -1,33 +1,19 @@
-import korlibs.korge.gradle.*
+import korlibs.korge.gradle.korge
 
 plugins {
-	alias(libs.plugins.korge)
+    id("com.soywiz.korge")
+    id("org.jetbrains.kotlin.plugin.allopen")
+    id("org.jetbrains.kotlinx.benchmark")
 }
 
 korge {
-	id = "com.sample.demo"
+    id = "org.github.smaugfm"
 
-// To enable all targets at once
-
-	//targetAll()
-
-// To enable targets based on properties/environment variables
-	//targetDefault()
-
-// To selectively enable targets
-	
-	targetJvm()
-	targetJs()
-	targetDesktop()
-	targetIos()
-	targetAndroid()
-
-	serializationJson()
+    targetJvm()
 }
 
 
 dependencies {
     add("commonMainApi", project(":deps"))
-    //add("commonMainApi", project(":korge-dragonbones"))
 }
 
